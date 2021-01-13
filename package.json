@@ -2,7 +2,6 @@
   "name": "initialyzer-ds",
   "version": "1.0.0",
   "description": "This is initialyzer design system frontend component library",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/initialyze/initialyzer-ds.git"
@@ -38,5 +37,11 @@
     "webpack": "^5.13.0",
     "webpack-cli": "^4.3.1",
     "webpack-import-glob-loader": "^1.6.3"
-  }
+  },
+  "keywords" :[
+    "lit-element",
+    "lit-html",
+    "web-component",
+    "es6"
+  ]
 }
