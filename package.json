@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "This is initialyzer design system frontend component library",
   "private": true,
-  "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/initialyze/initialyzer-ds.git"
   },
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "Initialyze",
+  "license": "",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "lit-element": "^2.4.0",
