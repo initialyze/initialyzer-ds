@@ -13,7 +13,7 @@ class Title extends LitElement {
 
   constructor() {
     super();
-    this.name = 'Title';
+    this.text = 'Title';
     this.type = 'h1';
     this.linkDisabled = false;
     this.linkURL = undefined;
@@ -21,20 +21,20 @@ class Title extends LitElement {
 
   render() {
     console.log("Initializing title component ...");
-    let customTag;
+    let customElement;
     // IF LINK DISABLED
-    if (!this.linkURL || this.linkDisabled) {
-      customTag = `<${this.type} class='cmp-title__text'>${this.text}</${this.type}>`;
+    if ((this.linkURL == "") || this.linkDisabled != false) {
+      customElement = `<${this.type} class='cmp-title__text'>${this.text}</${this.type}>`;
     } else {
       // ELIF LINK ENABLED
-      customTag = `<${this.type} class='cmp-title__text'>
+      customElement = `<${this.type} class='cmp-title__text'>
             <a class='cmp-title__link' href='${this.linkURL}'>
                 ${this.text}
             </a>
         </${this.type}>`;
     }
     return html`
-      ${unsafeHTML(customTag)}
+      ${unsafeHTML(customElement)}
     `;
   }
 }
