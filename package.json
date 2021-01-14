@@ -1,6 +1,6 @@
 {
   "name": "initialyzer-ds",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is initialyzer design system frontend component library",
   "repository": {
     "type": "git",
@@ -43,5 +43,8 @@
     "lit-html",
     "web-component",
     "es6"
-  ]
+  ],
+  "publishConfig":{
+    "registry":"https://repo.initialyze.com/artifactory/api/npm/npm-repo/"
+  }
 }
