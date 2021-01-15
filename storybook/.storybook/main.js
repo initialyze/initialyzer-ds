@@ -9,7 +9,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
-  'webpackFinal':  async (config, { configType }) => {
+  "webpackFinal":  async (config, { configType }) => {
     // Make whatever fine-grained changes you need
     config.module.rules.push({
       test: /\.scss$/,
