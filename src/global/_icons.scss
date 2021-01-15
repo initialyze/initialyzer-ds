@@ -1,0 +1,13 @@
+// For image icons
+.icon {
+    &-globe {
+        content:'';
+        width: 15px;
+        height: 15px;
+        background-size: 15px;
+        background-image: url('../resources/img/icons/globe.png');
+    }
+    &-calender {
+        background: url('../resources/img/icons/calender.png') 95% 50% no-repeat ;
+    }
+}

@@ -1,0 +1,92 @@
+// Text Sizes (text-xl, text-sm, text-md)
+@each $size, $value in $typography-sizes {
+	// Typography Size Variant
+	.text-#{$size} {
+		@include font-size($value);
+		@for $index from 1 through 6 {
+			h#{$index},
+			.h#{$index} {
+				@include font-size($value);
+			}
+		}
+	}
+}
+
+$heading-sizes: $h1-font-size $h2-font-size $h3-font-size $h4-font-size $h5-font-size $h6-font-size;
+$sheading-sizes: $sh1-font-size $sh2-font-size $sh3-font-size $sh4-font-size $sh5-font-size $sh6-font-size;
+$paragraph-sizes: $p1-font-size $p2-font-size $p3-font-size $p4-font-size $p5-font-size $p6-font-size;
+$paragraph-line-heights: 2 1.75 1.5 1.25 1 1;
+
+@for $index from 1 through 6 {
+	//make heading classes .h1-.h6 work globally and for title component
+	.h#{$index} {
+		@include font-size(nth($sheading-sizes,$index));
+		.cmp-title
+		{
+			h1,h2,h3,h4,h5,h6 {
+				@include font-size(nth($heading-sizes,$index));
+			}
+		}
+	}
+
+	//make sub-heading sizes work globally and for title component using just simple h1-h6 class
+	.sh#{$index} {
+		@include font-size(nth($sheading-sizes,$index));
+		.cmp-title
+		{
+			h1,h2,h3,h4,h5,h6 {
+				@include font-size(nth($sheading-sizes,$index));
+			}
+		}
+	}
+
+	//make paragraph sizes p1-p6 class work globally
+	.p#{$index} {
+		@include font-size(nth($paragraph-sizes,$index));
+		line-height: nth($paragraph-line-heights,$index);
+	}
+}
+
+
+// Text Format
+// Blockquote
+.blockquote {
+	padding: $blockquote-padding-y $blockquote-padding-x;
+	border-left: 0.25rem solid #eceeef;
+	&.text-right {
+		border-left: none;
+		border-right: 0.25rem solid #eceeef;
+	}
+}
+
+.bd-highlight {
+	background-color: rgba(86, 61, 124, 0.15);
+	border: 1px solid rgba(86, 61, 124, 0.15);
+}
+
+.text-strikethrough {
+	text-decoration: line-through;
+}
+
+// Alignment
+.text-center {
+	text-align: center !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+// Lists
+.list-unstyled > .cmp-text > ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+.list-inline ul {
+	margin-right: 0.5rem;
+}
+
+.list-inline-item li {
+	display: inline-block;
+}

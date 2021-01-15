@@ -1,0 +1,44 @@
+// Colors
+
+/* create background classes w/ just color name, no bg-<color name> required */
+@each $key,
+$val in $full-palette {
+  .#{$key} {
+    background-color: $val !important;
+  }
+
+  //add opacity to the entire color palette
+  @each $opacity-key, $opacity-val in $opacity-classes {
+    .#{$key}.#{$opacity-key} {
+      @include rgba-background($val,$opacity-val);
+    }
+  }
+}
+
+/* create background classes text-<color name> */
+@each $key,
+$val in $fluent-colors {
+  .bg-#{$key} {
+    background-color: $val !important;
+  }
+
+  //add opacity to bg colors
+  @each $opacity-key, $opacity-val in $opacity-classes {
+    .bg-#{$key}.#{$opacity-key} {
+      @include rgba-background($val,$opacity-val);
+    }
+  }
+}
+
+/* create text color classes text-<color name> */
+@each $key,
+$val in $fluent-colors {
+  .text-#{$key} {
+    color: $val !important;
+  }
+}
+
+/* create gradient classes for each color .bg-gradient-<color name> */
+@each $key, $value in $fluent-colors {
+    @include fluent-bg-gradient-variant(".bg-gradient-#{$key}", $value);
+}

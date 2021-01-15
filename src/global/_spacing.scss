@@ -1,0 +1,67 @@
+// inset (padding evenly)
+// inset squish (cover content - 1:2 ratio)
+// inset stretch (cover content - 2:1 ratio)
+// stack (margin down)
+// inline (vertical margin right);
+.space {
+  &-inset {
+    @each $token_key, $num_value in $space_tokens {
+      &--#{$token_key} {
+        padding: #{$num_value} !important;
+      }
+    };
+
+    @each $token_key, $num_value in $space_tokens {
+      &-squish--#{$token_key} {
+        padding: #{$num_value} #{$num_value*2} !important;
+      }
+    };
+
+    @each $token_key, $num_value in $space_tokens {
+      &-stretch--#{$token_key} {
+        padding: #{$num_value * 2} #{$num_value} !important;
+      }
+    }
+  }
+
+  @each $token_key, $num_value in $space_tokens {
+    &-stack--#{$token_key} {
+      margin-bottom: #{$num_value} !important;
+    }
+  };
+
+  @each $token_key, $num_value in $space_tokens {
+    &-inline--#{$token_key} {
+      margin-right: #{$num_value} !important;
+    }
+  };
+}
+
+//extend bootstrap spacing classes to create specific layout classes
+.my-std
+{
+  @extend .my-sm-1;
+  @extend .my-md-2;
+  @extend .my-lg-3;
+}
+
+.mx-std
+{
+  @extend .mx-sm-1;
+  @extend .mx-md-2;
+  @extend .mx-lg-3;
+}
+
+.py-std
+{
+  @extend .py-sm-1;
+  @extend .py-md-2;
+  @extend .py-lg-3;
+}
+
+.px-std
+{
+  @extend .px-sm-1;
+  @extend .px-md-2;
+  @extend .px-lg-3;
+}

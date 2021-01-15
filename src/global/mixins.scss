@@ -1,0 +1,114 @@
+@mixin shape-circle($size) {
+  border-radius: 50em;
+  height: $size;
+  width: $size;
+}
+
+@mixin opacity($opacity) {
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+  opacity: $opacity;
+}
+
+@function rem-calc($size) {
+  $remSize: $size / 10px;
+  //Default font size on html element is 100%, equivalent to 10px;
+  @return #{$remSize}rem;
+}
+
+@mixin tile-content-styles {
+  @extend .col-sm-12;
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  flex-grow: 1;
+  padding: 16px;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+  	padding: 24px;
+  }
+}
+
+//TODO: clean this up - should be using proper font family variable and function for fontsize rfs
+@mixin tile-eyebrow-styles {
+  color: $steel;
+  font-family: $open-font-path;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  line-height: 1;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+@mixin clamp-lines($num) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+}
+
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-percentage($percentage, $columns: $grid-columns) {
+  @include make-col((($columns * $percentage)/100));
+}
+
+@mixin rgba-background($hexcolor, $opacity) {
+  background-color: $hexcolor !important;
+  background-color: rgba($hexcolor, $opacity) !important;
+}
+
+@mixin fluent-bg-gradient-variant($parent, $color) {
+  #{$parent} {
+    background: $color linear-gradient(90deg, mix(black, $color, 60%), $color) repeat-x !important;
+  }
+}
+
+/// @param {space-token} => margin/padding 
+/// @param {space-around} => [ top ,right, bottom, left] in rem
+@mixin space-around($space-token, $top: null, $right: null, $bottom: null, $left: null){
+  @if $top {
+    #{$space-token}-top: $top !important;
+  }
+  @if $right {
+    #{$space-token}-right: $right !important;
+  }
+  @if $bottom {
+    #{$space-token}-bottom: $bottom !important;
+  }
+  @if $left {
+    #{$space-token}-left: $left !important;
+  }
+}
+
+
+@mixin gradient($start-color, $end-color, $orientation){
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+/// Show an element by default, and hide it above a certain screen size.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in $breakpoints.**
+@mixin hide-breakpoint-down($size) {
+  @include media-breakpoint-down($size) {
+    display: none;
+  }
+}

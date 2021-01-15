@@ -1,0 +1,38 @@
+// Responsive visibility classes
+@each $key, $value  in $grid-breakpoints {
+    .hide-#{$key}-down {
+        @include hide-breakpoint-down($key);
+    }
+    // class child element
+    .hide-child-#{$key}-down > *{
+        @include hide-breakpoint-down($key);
+    }
+
+    //author mode fixes
+    .aem-AuthorLayer-Edit
+    {
+        .hide-#{$key}-down {
+            display: initial;
+        }
+        .hide-child-#{$key}-down > *{
+            display: initial;
+        }
+    }
+}
+
+.hidden, .hidden-child
+{
+    display: none;
+
+}
+
+//author mode fixes
+.aem-AuthorLayer-Edit
+{
+    .hidden, .hidden-child
+    {
+        display: initial;
+
+    }
+
+}

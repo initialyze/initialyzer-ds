@@ -1,0 +1,72 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 300;
+}
+
+a {
+  color: $link-color;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+//.aem-GridColumn {
+//  padding-left: 0;
+//  padding-right: 0;
+//}
+
+
+.xf-content-height {
+  margin: 0!important;
+}
+
+.xf-web-container {
+  font-family: unset!important;
+}
+
+%ellipsis-3-clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+
+//*** START: STYLES FOR COMPONENT INFO ***
+.cmp-info, .cmp-ss-info {
+  top:0;
+  position: absolute;
+  display: none;
+  background-color: #2583d8;
+  color: $white-base;
+  font-size: $font-size-xs;
+  @extend .space-inset--xs;
+}
+
+.cmp-ss-info
+{
+  right:0;
+}
+
+.cmp-info
+{
+  left:0;
+}
+
+.wireframe
+{
+  .cmp-ss-info,.cmp-info {
+    display: block;
+  }
+}
+//*** END: STYLES FOR COMPONENT INFO ***

@@ -1,0 +1,413 @@
+// overwrite the default bootstrap variables which we will need here for some calculation
+@import "overwrite";
+
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+/* Opacity palette */
+$opacity-0: 0;
+$opacity-10: 0.1;
+$opacity-20: 0.2;
+$opacity-30: 0.3;
+$opacity-40: 0.4;
+$opacity-50: 0.5;
+$opacity-60: 0.6;
+$opacity-70: 0.7;
+$opacity-80: 0.8;
+$opacity-90: 0.9;
+$opacity-100: 1;
+
+/* Opacity classes with respective values */
+$opacity-classes: (
+  opacity-0: $opacity-0,
+  opacity-10: $opacity-10,
+  opacity-20: $opacity-20,
+  opacity-30: $opacity-30,
+  opacity-40: $opacity-40,
+  opacity-50: $opacity-50,
+  opacity-60: $opacity-60,
+  opacity-70: $opacity-70,
+  opacity-80: $opacity-80,
+  opacity-90: $opacity-90,
+  opacity-100: $opacity-100
+);
+
+//// Typography
+$font-size-xxxl:              $font-size-base * 4.5 !default;
+$font-size-xxl:               $font-size-base * 4 !default;
+$font-size-xl:                $font-size-base * 3 !default;
+$font-size-lg:                $font-size-base * 2 !default;
+$font-size-md:                $font-size-base * 1 !default;
+$font-size-sm:                $font-size-base * .85 !default;
+$font-size-xs:                $font-size-base * .75 !default;
+$font-size-xxs:               $font-size-base * .5 !default;
+
+$sh1-font-size:                $font-size-base * 1.75 !default;
+$sh2-font-size:                $font-size-base * 1.55 !default;
+$sh3-font-size:                $font-size-base * 1.35 !default;
+$sh4-font-size:                $font-size-base * 1.15 !default;
+$sh5-font-size:                $font-size-base !default;
+$sh6-font-size:                $font-size-base !default;
+
+
+$p1-font-size:                $font-size-xl !default;
+$p2-font-size:                $font-size-lg !default;
+$p3-font-size:                $font-size-md !default;
+$p4-font-size:                $font-size-sm !default;
+$p5-font-size:                $font-size-xs !default;
+$p6-font-size:                $font-size-xxs !default;
+
+// Fonts
+$open-font-path: "../resources/fonts/OpenSans/" !default;
+
+// Font-Awesome
+$fa-font-path:        "../resources/font-awesome";
+
+// Colors
+$warning-color:    #FFB900 !default;
+$crimson:          #E74856 !default;
+$blue:             #0078D7 !default;
+$cyan:             #0099BC !default;
+$dimgrey:          #7A7574 !default;
+$grey:             #767676 !default;
+$light-grey:       #BFBFBF !default;
+$gainsboro:        #DCDCDC !default;
+$amber:            #FF8C00 !default;
+$red:              #E81123 !default;
+$dark-blue:        #0063B1 !default;
+$steel-blue:       #2D7D9A !default;
+$dark-dimgrey:     #5D5A58 !default;
+$dark-grey:        #4C4A48 !default;
+$orange:           #F7630C !default;
+$pink:             #EA005E !default;
+$light-violet:     #8E8CD8 !default;
+$turquoise:        #00B7C3 !default;
+$bluegrey:         #68768A !default;
+$steel:            #69797E !default;
+$chocolate:        #CA5010 !default;
+$medium-violet:    #C30052 !default;
+$slate-blue:       #6B69D6 !default;
+$teal:             #038387 !default;
+$dark-bluegrey:    #515C6B !default;
+$dark-steel:       #4A5459 !default;
+$deep-orange:      #DA3B01 !default;
+$megent:           #E3008C !default;
+$light-purple:     #8764B8 !default;
+$light-sea:        #00B294 !default;
+$slate-grey:       #567C73 !default;
+$olive:            #647C64 !default;
+$salmon:           #EF6950 !default;
+$dark-pink:        #BF0077 !default;
+$dark-purple:      #744DA9 !default;
+$dark-cyan:        #018574 !default;
+$green-grey:       #486860 !default;
+$dark-olive:       #525E54 !default;
+$dark-coral:       #D13438 !default;
+$orchid:           #C239B3 !default;
+$medium-orchid:    #B146C2 !default;
+$green:            #00CC6A !default;
+$grass-green:      #498205 !default;
+$sandy:            #847545 !default;
+$coral:            #FF4343 !default;
+$purple:           #9A0089 !default;
+$dark-orchid:      #881798 !default;
+$forest-green:     #10893E !default;
+$dark-green:       #107C10 !default;
+$earth:            #7E735F !default;
+$black-base:       #000    !default;
+$white-base:       #fff    !default;
+
+$full-pallete: () !default;
+$full-palette: map-merge(
+                (
+                        "warning-color": $warning-color,
+                        "crimson":       $crimson,
+                        "blue":          $blue,
+                        "cyan":          $cyan,
+                        "dimgrey":       $dimgrey,
+                        "light-grey":    $light-grey,
+                        "grey":          $grey,
+                        "amber":         $amber,
+                        "red":           $red,
+                        "dark-blue":     $dark-blue,
+                        "steel-blue":    $steel-blue,
+                        "dark-dimgrey":  $dark-dimgrey,
+                        "dark-grey":     $dark-grey,
+                        "orange":        $orange,
+                        "pink":          $pink,
+                        "light-violet":  $light-violet,
+                        "turquoise":     $turquoise,
+                        "bluegrey":      $bluegrey,
+                        "steel":         $steel,
+                        "chocolate":     $chocolate,
+                        "medium-violet": $medium-violet,
+                        "slate-blue":    $slate-blue,
+                        "teal":          $teal,
+                        "dark-bluegrey": $dark-bluegrey,
+                        "dark-steel":    $dark-steel,
+                        "deep-orange":   $deep-orange,
+                        "megent":        $megent,
+                        "light-purple":  $light-purple,
+                        "light-sea":     $light-sea,
+                        "slate-grey":    $slate-grey,
+                        "olive":         $olive,
+                        "salmon":        $salmon,
+                        "dark-pink":     $dark-pink,
+                        "dark-purple":   $dark-purple,
+                        "dark-cyan":     $dark-cyan,
+                        "green-grey":    $green-grey,
+                        "dark-olive":    $dark-olive,
+                        "dark-coral":    $dark-coral,
+                        "orchid":        $orchid,
+                        "medium-orchid": $medium-orchid,
+                        "green":         $green,
+                        "grass-green":   $grass-green,
+                        "sandy":         $sandy,
+                        "coral":         $coral,
+                        "purple":        $purple,
+                        "dark-orchid":   $dark-orchid,
+                        "forest-green":  $forest-green,
+                        "dark-green":    $dark-green,
+                        "earth":         $earth,
+                        "gainsboro":     $gainsboro
+
+),
+                $full-pallete
+);
+
+//overwrite bootstrap colors using fluent colors
+$primary:       $blue;
+$secondary:     $grey;
+$default:       $dark-purple;
+$success:       $dark-green;
+$info:          $turquoise;
+$warning:       $warning-color;
+$danger:        $deep-orange;
+
+$fluent-colors: () !default;
+$fluent-colors: map-merge(
+                (
+                        "primary":   $primary,
+                        "secondary": $secondary,
+                        "default":   $default,
+                        "warning":   $warning,
+                        "danger":    $danger,
+                        "success":   $success,
+                        "info":      $info
+                ),
+                $fluent-colors
+);
+
+$theme-colors: map-merge(
+  (
+          "primary":    $primary,
+          "secondary":  $secondary,
+          "success":    $success,
+          "info":       $info,
+          "warning":    $warning,
+          "danger":     $danger,
+          "light":      $light,
+          "dark":       $dark
+  ),
+  $theme-colors
+);
+
+
+// Typography Sizes
+$typography-sizes: () !default;
+$typography-sizes: map_merge(
+                   (
+                        "xxxl": $font-size-xxxl,
+                        "xxl": $font-size-xxl,
+                        "xl": $font-size-xl,
+                        "lg": $font-size-lg,
+                        "md": $font-size-md,
+                        "sm": $font-size-sm,
+                        "xs": $font-size-xs,
+                        "xxs": $font-size-xxs
+                   ),
+                   $typography-sizes
+);
+
+
+//Spacing Defaults
+$body-default-padding: 1rem 0;
+
+//space in rems
+$space-xxs: $spacer * .125;
+$space-xs: $spacer * 0.25;
+$space-sm: $spacer * 0.5;
+$space-md: $spacer;
+$space-lg: $spacer * 2;
+$space-xl: $spacer * 4;
+$space-xxl: $spacer * 8;
+
+$space_tokens: (
+        xxs  :   $space-xxs,
+        xs   :   $space-xs,
+        sm   :   $space-sm,
+        md   :   $space-md,
+        lg   :   $space-lg,
+        xl   :   $space-xl,
+        xxl   :   $space-xxl
+);
+
+// Transitions
+$transition-basic: all .2s linear !default;
+
+// Border radius
+$border-radius-circle: 50% !default;
+
+// Dropdown
+$dropdown-menu-padding: 1rem !default;
+
+// Progress
+$progress-cover-padding:                                   2rem 0                                           !default;
+$progress-cover-fluent-position-top:                       50%                                              !default;
+$progress-cover-fluent-position-left:                      $progress-cover-fluent-position-top              !default;
+$progress-cover-fluent-transform:                          translateX(-50%) translateY(-50%)                !default;
+$progress-cover-fluent-span-transform-rotate:              rotate(220deg)                                   !default;
+$progress-cover-fluent-span-animation:                     progress-circle 6s                               !default;
+$progress-cover-fluent-span-animation-delay-1:             .28s                                             !default;
+$progress-cover-fluent-span-animation-delay-2:             $progress-cover-fluent-span-animation-delay-1*2  !default;
+$progress-cover-fluent-span-animation-delay-3:             $progress-cover-fluent-span-animation-delay-1*3  !default;
+$progress-cover-fluent-span-animation-delay-4:             $progress-cover-fluent-span-animation-delay-1*4  !default;
+$progress-cover-medium-height:                             3.125rem                                         !default;
+$progress-cover-medium-width:                              $progress-cover-medium-height                    !default;
+$progress-cover-medium-padding:                            .4375rem                                         !default;
+$progress-cover-medium-span-width:                         2.375rem                                         !default;
+$progress-cover-medium-span-height:                        $progress-cover-medium-span-width                !default;
+$progress-cover-medium-span-after-width:                   .375rem                                          !default;
+$progress-cover-medium-span-after-height:                  $progress-cover-medium-span-after-width          !default;
+$progress-cover-medium-span-after-br:                      $progress-cover-fluent-position-top              !default;
+$progress-cover-small-height:                              1.875rem                                         !default;
+$progress-cover-small-width:                               $progress-cover-small-height                     !default;
+$progress-cover-small-padding:                             .1875rem                                         !default;
+$progress-cover-small-span-width:                          1.25rem                                          !default;
+$progress-cover-small-span-height:                         $progress-cover-small-span-width                 !default;
+$progress-cover-small-span-after-width:                    .25rem                                           !default;
+$progress-cover-small-span-after-height:                   $progress-cover-small-span-after-width           !default;
+$progress-cover-small-span-after-br:                       $progress-cover-fluent-position-top              !default;
+$progress-cover-large-height:                              4.375rem                                         !default;
+$progress-cover-large-width:                               $progress-cover-large-height                     !default;
+$progress-cover-large-padding:                             .625rem                                          !default;
+$progress-cover-large-span-width:                          3.125rem                                         !default;
+$progress-cover-large-span-height:                         $progress-cover-large-span-width                 !default;
+$progress-cover-large-span-after-width:                    $progress-cover-medium-padding                   !default;
+$progress-cover-large-span-after-height:                   $progress-cover-large-span-after-width           !default;
+$progress-cover-large-span-after-br:                       $progress-cover-fluent-position-top              !default;
+$progress-cover-fluent-height:                             .25rem                                           !default;
+$progress-cover-fluent-mt:                                 1.5rem                                           !default;
+$progress-cover-fluent-line-animation-delay:               50ms                                             !default;
+$progress-cover-fluent-line-animation:                     progress-line 3.5s                               !default;
+$progress-cover-fluent-line-animation-delay-first:         $progress-cover-fluent-line-animation-delay      !default;
+$progress-cover-fluent-line-animation-delay-first-after:   -.75rem                                          !default;
+$progress-cover-fluent-line-animation-delay-second:        .1s                                              !default;
+$progress-cover-fluent-line-animation-delay-second-after:  -1.375rem                                        !default;
+$progress-cover-fluent-line-animation-delay-third:         .15s                                             !default;
+$progress-cover-fluent-line-animation-delay-third-after:   -2rem                                            !default;
+$progress-cover-fluent-line-animation-delay-fourth:        .2s                                              !default;
+$progress-cover-fluent-line-animation-delay-fourth-after:  -2.625rem                                        !default;
+$progress-cover-fluent-line-animation-delay-fifth:         .3s                                              !default;
+$progress-cover-fluent-line-animation-delay-fifth-after:   -3.25rem                                         !default;
+$progress-cover-fluent-line-animation-delay-fifth-media-1: -2.8rem                                          !default;
+$progress-cover-fluent-line-after-br:                      $progress-cover-fluent-position-top              !default;
+$progress-cover-fluent-line-primary-span-after-bg:         #c2c2c2                                          !default;
+$progress-mobile-span-small-width:                         .3125rem                                         !default;
+$progress-mobile-span-small-height:                        $progress-mobile-span-small-width                !default;
+$progress-mobile-span-medium-width:                        $progress-cover-medium-padding                   !default;
+$progress-mobile-span-medium-height:                       $progress-cover-medium-padding                   !default;
+$progress-mobile-span-large-width:                         $progress-cover-large-padding                    !default;
+$progress-mobile-span-large-height:                        $progress-cover-large-padding                    !default;
+
+// Tabs
+$fluent-tabs-nav-item-mx:                          .8rem          !default;
+$fluent-tabs-nav-link-pb:                          .2rem          !default;
+$fluent-tabs-font-size:                            1.2rem         !default;
+$fluent-tabs-nav-link-color:                       #616161        !default;
+$fluent-tabs-nav-link-active-color:                #212121        !default;
+$fluent-tabs-nav-link-active-border-bottom-height: 2px            !default;
+$fluent-tabs-nav-link-active-border-font-weight:   400            !default;
+$fluent-tabs-nav-link-disabled-color:              rgba(0,0,0,.3) !default;
+$fluent-tabs-tab-content-my:                       2.5rem         !default;
+
+// Carousel
+$carousel-indicators-width:         0.625rem                   !default;
+$carousel-indicators-height:        $carousel-indicators-width !default;
+$carousel-indicators-border-radius: $border-radius-circle      !default;
+
+// Pagination
+$pagination-item-mr:             .75rem                             !default;
+$pagination-link-disabled-color: #767676                            !default;
+$pagination-link-color:          $dark-blue                         !default;
+$pagination-link-hover-color:    $blue                              !default;
+$pagination-link-focus-color:    $fluent-tabs-nav-link-active-color !default;
+$pagination-link-active-color:   $fluent-tabs-nav-link-active-color !default;
+$pagination-link-icon-font-size: .8rem                              !default;
+
+// Blockquote
+$blockquote-padding-y: .5rem !default;
+$blockquote-padding-x: 1rem  !default;
+
+// Button
+
+$btn-margin-basic:            .375rem !default;
+$btn-padding-y-basic:         .84rem !default;
+$btn-padding-x-basic:         2.14rem !default;
+$btn-font-size-basic:         .81rem !default;
+
+// Table
+$table-th-lg-min-width: 9rem !default;
+$table-th-sm-min-width: 6rem !default;
+
+/*
+*  Demo Component
+*/
+$demo-cmp-bg-color: #f7f7f7;
+$demo-cmp-border: 1px dashed #cfd6e4;
+// Demo button style
+$demo-example-btn-bg-color: $light-grey;
+$demo-example-btn-color: $white-base;
+// Demo button hover style
+$demo-example-btn-hover-bg-color: $white-base;
+$demo-example-btn-hover-color: $light-grey;
+
+$demo-example-info-bg-color: #37383c;
+
+// Left Navigation
+$nav-primary-width: 300px;
+$nav-primary-bg-color: $black;
+$nav-primary-text-color: $white;
+$nav-primary-toggle-btn-color: $blue;
+
+// Mega Menu
+
+$mega-menu-bg-color : $black;
+$mega-menu-text-color : $black;
+
+$mega-menu-hover-bg-color: $white;
+$mega-menu-hover-text-color : $black;
+
+$mega-menu-separator-color: $light-grey;
+$mega-menu-children-bg-color: $white;
+$mega-menu-box-shadow: 0px 0.7px 2px $grey;
+$mega-menu-back-button-bg-color: $white;
+$mega-menu-back-button-box-shadow: 0px 0px 1px $grey;
+
+// Search Box component
+$searchbox-suggetions-text-color: $black;
+
+//TODO: review this - maybe should be using our generic spacing classes that @tushar will be implementing
+/* Padding Gutters */
+$padding-gutters: (
+        sm: 20px,
+        md: 30px,
+        lg: 40px,
+);
+
+// Search Tag Filter
+$search-tag-filter-bg-header : lighten($color: $grey, $amount: 50%);
+$search-tag-filter-predicate-bg-color : lighten($color: $grey, $amount: 30%);
+$search-tag-filter-predicate-label-shadow : lighten($color: $grey, $amount: 30%);
