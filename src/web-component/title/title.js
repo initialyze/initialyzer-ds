@@ -6,7 +6,7 @@ class Title extends LitElement {
     return {
       text: { type: String },
       type: { type: String },
-      linkDisabled: { type: Boolean },
+      linkDisabled: { type: String },
       linkURL: { type: String },
     };
   }
@@ -15,7 +15,7 @@ class Title extends LitElement {
     super();
     this.text = 'Title';
     this.type = 'h1';
-    this.linkDisabled = false;
+    this.linkDisabled = "false";
     this.linkURL = undefined;
   }
 
@@ -23,7 +23,7 @@ class Title extends LitElement {
     console.log("Initializing title component ...");
     let customElement;
     // IF LINK DISABLED
-    if ((this.linkURL == "") || this.linkDisabled != false) {
+    if ((this.linkURL == "") || this.linkDisabled != "false") {
       customElement = `<${this.type} class='cmp-title__text'>${this.text}</${this.type}>`;
     } else {
       // ELIF LINK ENABLED
