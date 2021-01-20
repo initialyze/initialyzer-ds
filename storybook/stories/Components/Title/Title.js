@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import '../../src/web-component/title/title';
+import '../../../../src/web-component/title/title';
 /**
  * Primary UI component for user interaction
  */
