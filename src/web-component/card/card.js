@@ -1,11 +1,11 @@
 import { LitElement, html } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
+import '../button/button';
 
 class Card extends LitElement {
   static get properties() {
     return {
       assetVariation: { type: String },
-      imageResource: { type:Object},
       pretitle: { type: String },
       title: { type: String },
       titleType: { type: String },
@@ -17,7 +17,6 @@ class Card extends LitElement {
       actionsEnabled: { type: String },
       template: { type: String },
       linkEntireCard: {},
-      actionsList: {type : Object}
     };
   }
 
@@ -48,9 +47,10 @@ class Card extends LitElement {
             <a class="cmp-card__title-link" href="${this.linkURL}" data-sly-unwrap="${this.linkEntireCard || !this.linkURL || this.titleLinkHidden}">${this.title}</a>
           </h2>
           <div class="cmp-card__description">${this.description}</div>
-          <div class="cmp-card__action-container" data-sly-test="${this.actionsEnabled}" data-sly-list.button="${this.actionsList}">
-            <div class="cmp-card__action-item" data-sly-resource="${this.actionsList[button]}"></div>
-          </div>
+          <init-wc-button
+            class="cmp-web-button"
+            text = "READ MORE"
+          ></init-wc-button>
         </div>
       </div>`;
     } 
@@ -60,4 +60,4 @@ class Card extends LitElement {
   }
 }
 
-customElements.define('card-web-cmp', Card);
+customElements.define('init-wc-card', Card);

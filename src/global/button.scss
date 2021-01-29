@@ -1,0 +1,63 @@
+.cmp-button
+{
+  @extend .btn;
+  // link behaviour
+  &.link {
+    &:hover{
+      box-shadow: none;
+    }
+  }
+  // Button Block
+  &--block{
+    > .cmp-button, 
+    > .cmp-form-button {
+      @extend .btn-block;
+    }
+  }
+
+  //button sizes  (cmp-button--${size})
+  &--sm
+  {
+    > .cmp-button,
+    > .cmp-form-button
+    {
+      @extend .btn-sm;
+    }
+  }
+
+  &--lg {
+    > .cmp-button, 
+    > .cmp-form-button
+    {
+      @extend .btn-lg;
+    }
+  }
+
+  // button colors (cmp-button--${color})
+  @each $color, $value in $fluent-colors {
+    // Button Background Variant
+    &--#{$color} {
+      > .cmp-button, 
+      > .cmp-form-button {
+        @extend .btn-#{$color};
+      }
+    }
+  }
+
+  //button outline-colors (cmp-button--outline-${color})
+  &--outline {
+    // Button Variant
+    @each $color, $value in $fluent-colors {
+      &-#{$color} {
+        .cmp-button, 
+        > .cmp-form-button {
+          @extend .btn-outline-#{$color};
+        }
+      }
+    }
+  }
+}
+// Form Button Style Override - Default
+.cmp-form-button{
+  @extend .btn;
+}
