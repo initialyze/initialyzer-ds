@@ -1,12 +1,18 @@
 import { LitElement, html } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
+/**
+ * A text field web component
+ * @cssprop [Alignments=text-left] - Controls the alignment of the title i.e. left, right, center
+ * @cssprop [Sizes=h1] - Controls the sizes of the title i.e. h1 to h6
+ * @cssprop [Colors=text-primary] - Controls the colors of the title i.e. text-primary,text-secondary,etc.,
+ */
 class Title extends LitElement {
   static get properties() {
     return {
       text: { type: String },
       type: { type: String },
-      linkDisabled: { type: String },
+      linkDisabled: { type: Boolean },
       linkURL: { type: String },
     };
   }
@@ -16,7 +22,7 @@ class Title extends LitElement {
     this.text = 'Title';
     this.type = 'h1';
     this.linkDisabled = "false";
-    this.linkURL = undefined;
+    this.linkURL = 'https://www.initialyze.com';
   }
 
   render() {
