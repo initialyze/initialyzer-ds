@@ -1,7 +1,6 @@
 # initialyzer-design-system
 
 ## Getting Started
-<hr/>
 <br/>
 
 install dependency node modules
@@ -21,7 +20,6 @@ Now open `index.html` from `/src/` in browser and you can test your web componen
 
 ## Integrate web component in other projects
 
-<hr/>
 <br/>
 
 Bundle of web components that can be imported in your main.js. For example,
@@ -44,7 +42,7 @@ and in markup add custom element where you want to display
 
 ```
 ## Compoent property mapping
-<hr/>
+
 <br/>
 
 
