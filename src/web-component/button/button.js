@@ -8,6 +8,8 @@ class Button extends LitElement {
         linkWithQuery: { type: String },
         accessibilityLabel: { type: String },
         text: { type: String },
+        linkTarget : { type: String},
+        linkType : { type: String}
     };
   }
 
@@ -17,21 +19,26 @@ class Button extends LitElement {
     this.linkWithQuery = "www.google.com";
     this.accessibilityLabel = "button1";
     this.text = "button1";
-    
+    this.linkType ="a";
+    this.linkTarget = "_self";
   }
 
   render() {
     console.log("Initializing button component ...",this);
     let customElement;
       customElement = `
-      <div class="button">
-        <a class ="cmp-button"
-        id=${this.id}
-        href=${this.linkWithQuery}
-        aria-label=${this.accessibilityLabel}>
+      <div class="button cmp-button--outline-success">
+        <a 
+            data-sly-element=${this.linkType}
+            data-cmp-category="cmp-button"
+            class="cmp-button"
+            id=${this.id}
+            href=${this.linkWithQuery}
+            data-sly-attribute.target=${this.linkTarget}
+            aria-label=${this.accessibilityLabel}>
             <span class="cmp-button__text">${this.text}</span>
         </a>
-      </div>
+     </div>
       `;
     
     return html`

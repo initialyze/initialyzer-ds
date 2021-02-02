@@ -7,6 +7,7 @@ class Card extends LitElement {
     return {
       assetVariation: { type: String },
       pretitle: { type: String },
+      fileReference: {type: String},
       title: { type: String },
       titleType: { type: String },
       description: { type: String },
@@ -29,6 +30,7 @@ class Card extends LitElement {
     this.description = 'Add some description here...';
     this.variation = 'Default';
     this.pretitle = "News";
+    this.fileReference = "/content/dam/aem-initialyzer-docs/en/images/logos/initialyzer-logo-top-monochrome.svg";
     this.linkEntireCard = 'false';
     this.titleLinkHidden = 'true';
     this.actionsEnabled = 'true';
@@ -40,6 +42,9 @@ class Card extends LitElement {
     // IF LINK DISABLED
     if (this.variation == "Default") {
       customElement = `
+      <div class="cmp-card__asset">
+        <img src=${this.fileReference}></img>
+      </div>
       <div class="cmp-card__content card-body">
         <div class="cmp-card__content-wrapper">
           <h6><span class="cmp-card__eyebrow">${this.pretitle}</span></h6>  
@@ -50,6 +55,10 @@ class Card extends LitElement {
           <init-wc-button
             class="cmp-web-button"
             text = "READ MORE"
+            linkWithQuery="/content/aem-initialyzer-docs/language-masters/en/home/components/general/button.html"
+            linkTarget="_self"
+            fileReference=${this.fileReference}
+            accessibilityLabel="READ MORE"
           ></init-wc-button>
         </div>
       </div>`;
