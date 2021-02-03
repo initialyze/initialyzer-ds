@@ -42,24 +42,19 @@ class Card extends LitElement {
     // IF LINK DISABLED
     if (this.variation == "Default") {
       customElement = `
-      <div class="cmp-card__asset">
-        <img src=${this.fileReference}></img>
-      </div>
-      <div class="cmp-card__content card-body">
-        <div class="cmp-card__content-wrapper">
+      <div class="cmp-card--default cmp-card__wrapper">
+        <div class="cmp-card__asset">
+          <img src=${this.fileReference}></img>
+        </div>
+        <div class="cmp-card__content card-body">
+          <div class="cmp-card__content-wrapper">
           <h6><span class="cmp-card__eyebrow">${this.pretitle}</span></h6>  
-          <h2 class="cmp-card__card-title" data-sly-element="${this.titleType}">
-            <a class="cmp-card__title-link" href="${this.linkURL}" data-sly-unwrap="${this.linkEntireCard || !this.linkURL || this.titleLinkHidden}">${this.title}</a>
-          </h2>
-          <div class="cmp-card__description">${this.description}</div>
-          <init-wc-button
-            class="cmp-web-button"
-            text = "READ MORE"
-            linkWithQuery="/content/aem-initialyzer-docs/language-masters/en/home/components/general/button.html"
-            linkTarget="_self"
-            fileReference=${this.fileReference}
-            accessibilityLabel="READ MORE"
-          ></init-wc-button>
+            <h2 class="cmp-card__card-title" data-sly-element="${this.titleType}">
+              <a class="cmp-card__title-link" href="${this.linkURL}" data-sly-unwrap="${this.linkEntireCard || !this.linkURL || this.titleLinkHidden}">${this.title}</a>
+            </h2>
+            <div class="cmp-card__description">${this.description}</div>
+            <slot name="action"></slot>
+          </div>
         </div>
       </div>`;
     } 
