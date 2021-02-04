@@ -42,7 +42,7 @@ class Card extends LitElement {
     // IF LINK DISABLED
     if (this.variation == "Default") {
       customElement = `
-      <div class="cmp-card--default cmp-card__wrapper">
+      
         <div class="cmp-card__asset">
           <img src=${this.fileReference}></img>
         </div>
@@ -55,7 +55,7 @@ class Card extends LitElement {
             <div class="cmp-card__description">${this.description}</div>
             <slot name="action"></slot>
           </div>
-        </div>
+        
       </div>`;
     } 
     return html`
