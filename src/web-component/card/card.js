@@ -21,6 +21,10 @@ class Card extends LitElement {
     };
   }
 
+  createRenderRoot() {
+    return this;
+  }  
+
   constructor() {
     super();
     this.assetVariation = 'Default';
