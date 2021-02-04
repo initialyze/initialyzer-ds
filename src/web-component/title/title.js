@@ -12,7 +12,7 @@ class Title extends LitElement {
     return {
       text: { type: String },
       type: { type: String },
-      linkDisabled: { type: Boolean },
+      linkDisabled: { type: String },
       linkURL: { type: String },
     };
   }
