@@ -1,8 +1,15 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css, unsafeCSS } from 'lit-element';
+import { CSSClassify } from "@eightshapes/css-classify";
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import '../button/button';
+import componentStyles from '../../../dist/card.styles';
 
-class Card extends LitElement {
+class Card extends CSSClassify(LitElement) {
+
+  static get styles() {
+    return css`${unsafeCSS(componentStyles.cssText)}`;
+  }
+
   static get properties() {
     return {
       assetVariation: { type: String },
@@ -21,10 +28,6 @@ class Card extends LitElement {
     };
   }
 
-  createRenderRoot() {
-    return this;
-  }  
-
   constructor() {
     super();
     this.assetVariation = 'Default';
@@ -41,12 +44,11 @@ class Card extends LitElement {
   }
 
   render() {
-    console.log("Initializing card component ...",this.actionsList);
+    console.log("Initializing card component ...", componentStyles);
     let customElement;
     // IF LINK DISABLED
     if (this.variation == "Default") {
       customElement = `
-      
         <div class="cmp-card__asset">
           <img src=${this.fileReference}></img>
         </div>

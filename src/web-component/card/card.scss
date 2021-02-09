@@ -1,0 +1,307 @@
+// import bootstrap functions, variables and mixins so that we may leverage them
+@import "~bootstrap/scss/functions";
+@import '~bootstrap/scss/mixins';
+
+//global variables that we need for our project.
+@import '../../global/variables';
+
+// import the explicit bootstrap pieces that are needed
+// Core CSS
+@import "~bootstrap/scss/card";
+
+//START - BOOTSTRAP GRID
+@import "~bootstrap/scss/utilities/spacing";
+
+// global mixin being used across the site.
+@import '../../global/mixins';
+
+// Global SCSS
+@import '../../global/typography';
+@import '../../global/colors';
+@import '../../global/grid';
+@import "../../global/spacing";
+
+.cmp-card-wrapper {
+
+  .cmp-card {
+    @extend .card;
+
+    box-shadow: $box-shadow;
+    position: relative;
+    // Link entire card
+    &__wrapper-link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        cursor: pointer;
+        opacity: 0;
+    }
+    // Default Style - [START]
+
+    &__asset--embed .cmp-embed > iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__card-title {
+      @extend .card-title;
+      @extend .space-stack--xs;
+    }
+
+    &__description {
+      @extend .card-text;
+      @extend .space-stack--md;
+    }
+
+    &__eyebrow {
+      background-color: $light-grey;
+      @extend .space-inset--xs;
+      @extend .space-stack--xs;
+    }
+    // Default Style - [END]
+  }
+
+  &.cmp-card{
+      // Width variation - [START]
+      &__parent-width {
+        width:inherit;
+      }
+      &__fixed-width {
+        width: 18rem;
+      }
+      &__max-width {
+        max-width: 540px;
+      }
+      // Width variation - [END]
+
+    // Basic card variant
+    &--basic {
+      .cmp-card__content {
+        @extend .card-body;
+      }
+    }
+
+    // Vertical card variants
+    &--vertical {
+      .cmp-card__asset {
+        img {
+          @extend .card-img-top;
+        }
+      }
+      .cmp-card__content {
+        @extend .card-body;
+      }
+    }
+
+    &--profile-card {
+      text-align: center;
+      .cmp-card__asset-image {
+        & > .cmp-image {
+          position: relative;
+          height: 120px;
+          margin-bottom: 50px;
+          .cmp-image__image {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            box-shadow: 0px 5px 10px $grey;
+            bottom: -50px;
+            left: 0px;
+            right: 0px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+
+    // Horizontal card variant
+    &--horizontal {
+      //common styles for horizontal card variant
+      .cmp-card__wrapper {
+        @extend .row;
+        @extend .no-gutters;
+      }
+      .cmp-card__asset {
+        @extend .col-md-4;
+        padding-left:0;
+        padding-right:0;
+        img {
+          @extend .card-img;
+        }
+      }
+      .cmp-card__content {
+        @extend .col-md-8;
+        @extend .card-body;
+        @extend .space-inset--lg;
+        align-self: center;
+      }
+
+      //styles specific to image-left variant
+      &.cmp-card--image-left{
+
+      }
+
+      //styles specific to image-right variant
+      &.cmp-card--image-right {
+        .cmp-card__wrapper {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .cmp-card__asset-image
+      {
+        .cmp-image__image
+        {
+          height: rem-calc(150px);
+          width: 100%;
+          object-fit: cover;
+
+          @include media-breakpoint-up(md)
+          {
+            height: rem-calc(200px);
+          }
+        }
+      }
+
+    }
+
+    &--image-overlay {
+      .cmp-card__wrapper {
+        position: relative;
+        .cmp-card__content {
+          padding: 0px;
+          .cmp-card__bg-content-col {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            margin: 0 auto;
+            left: 0px;
+            right: 0px;
+            background: $black;
+            opacity: .5;
+          }
+          .cmp-card__content-wrapper{
+            position: absolute;
+            bottom: 0px;
+            @extend .space-inset--md;
+          }
+        }
+      }
+    }
+
+    &--jumbotron {
+      .cmp-card__wrapper {
+        position: relative;
+        .cmp-card__content {
+          padding: 0px;
+          .cmp-card__bg-content-col {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            margin: 0 auto;
+            left: 0px;
+            right: 0px;
+          }
+          .cmp-card__content-wrapper{
+            max-width: $container-max-width;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @extend .space-inset--md;
+          }
+        }
+      }
+
+      .cmp-card__card-title
+      {
+        @extend .text-xl;
+        @extend .space-stack--lg;
+        @extend .text-center;
+        font-weight: $font-weight-normal;
+
+        @include media-breakpoint-up(md)
+        {
+          @include font-size($font-size-xxl);
+          @include space-around('margin', $bottom:$space-xl );
+        }
+        @include media-breakpoint-up(lg) {
+          @include font-size($font-size-xxxl);
+        }
+      }
+
+      .cmp-card__description
+      {
+        @extend .text-center;
+        @extend .p3;
+        @extend .space-stack--lg;
+
+        @include media-breakpoint-up(md)
+        {
+          @include space-around('margin', $bottom:$space-xl );
+          @include font-size($p2-font-size);
+        }
+
+      }
+
+      .cmp-card__asset-image
+      {
+        .cmp-image__image
+        {
+          min-height: 400px;
+          max-height: 600px;
+          height: 70vh;
+          width: 100%;
+          object-fit: cover;
+
+          @include media-breakpoint-up(md)
+          {
+            height: 50vh;
+          }
+        }
+      }
+    }
+  }
+
+  &.cmp-card__inline--button{
+    .cmp-card__action-container {
+      display: inline-block;
+      > .cmp-card__action-item {
+        display: inline-block;
+      }
+    }
+  }
+    /* create gradient classes for image on card */
+    @each $key, $value in $fluent-colors {
+      &.cmp-card__asset--bgColor-#{$key} .cmp-card__asset-image>.cmp-image{
+        background-color: $value;
+      }
+
+      &.cmp-card__asset--bgColor-#{$key}.gradient-vertical .cmp-card__asset-image > .cmp-image {
+        @include gradient(mix($white, $value, 80%), $value, vertical);
+      }
+      &.cmp-card__asset--bgColor-#{$key}.gradient-horizontal .cmp-card__asset-image > .cmp-image {
+        @include gradient(mix($white, $value, 80%), $value, horizontal);
+      }
+      &.cmp-card__asset--bgColor-#{$key}.gradient-radial .cmp-card__asset-image > .cmp-image {
+        @include gradient(mix($white, $value, 80%), $value, null);
+      }
+    }
+}
+
+
+//author mode fixes
+.aem-AuthorLayer-Edit
+{
+  .cmp-card--jumbotron
+  {
+    .cmp-card__asset-image {
+      .cmp-image__image {
+        max-height: 500px;
+        max-width: 100%;
+      }
+    }
+  }
+}
