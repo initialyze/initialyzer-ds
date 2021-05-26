@@ -1,0 +1,121 @@
+/**
+ * @tokens CSS: Opacities
+ * @presenter Opacity
+ */
+
+:root {
+/* Opacity palette */
+--opacity-0: 0;
+--opacity-10: 0.1;
+--opacity-20: 0.2;
+--opacity-30: 0.3;
+--opacity-40: 0.4;
+--opacity-50: 0.5;
+--opacity-60: 0.6;
+--opacity-70: 0.7;
+--opacity-80: 0.8;
+--opacity-90: 0.9;
+--opacity-100: 1;
+}
+
+/**
+ * @tokens CSS: Colors
+ * @presenter Color
+ */
+:root {
+ --warning-color:    #FFB900;
+--crimson:          #E74856;
+--blue:             #0078D7; 
+--cyan:             #0099BC;
+--dimgrey:          #7A7574;
+--grey:             #767676;
+--light-grey:       #BFBFBF;
+--gainsboro:        #DCDCDC;
+--amber:            #FF8C00;
+--red:              #E81123;
+--dark-blue:        #0063B1;
+--steel-blue:       #2D7D9A;
+--dark-dimgrey:     #5D5A58;
+--dark-grey:        #4C4A48;
+--orange:           #F7630C;
+--pink:             #EA005E;
+--light-violet:     #8E8CD8;
+--turquoise:        #00B7C3;
+--bluegrey:         #68768A;
+--steel:            #69797E;
+--chocolate:        #CA5010;
+--medium-violet:    #C30052;
+--slate-blue:       #6B69D6;
+--teal:             #038387;
+--dark-bluegrey:    #515C6B;
+--dark-steel:       #4A5459;
+--deep-orange:      #DA3B01;
+--megent:           #E3008C;
+--light-purple:     #8764B8;
+--light-sea:        #00B294;
+--slate-grey:       #567C73;
+--olive:            #647C64;
+--salmon:           #EF6950;
+--dark-pink:        #BF0077;
+--dark-purple:      #744DA9;
+--dark-cyan:        #018574;
+--green-grey:       #486860;
+--dark-olive:       #525E54;
+--dark-coral:       #D13438;
+--orchid:           #C239B3;
+--medium-orchid:    #B146C2;
+--green:            #00CC6A;
+--grass-green:      #498205;
+--sandy:            #847545;
+--coral:            #FF4343;
+--purple:           #9A0089;
+--dark-orchid:      #881798;
+--forest-green:     #10893E;
+--dark-green:       #107C10;
+--earth:            #7E735F;
+--black-base:       #000   ;
+--white-base:       #fff   ;
+
+
+/* Aliases */
+
+--primary: var(--blue);
+--secondary: var(--grey);
+--default: var(--dark-purple);
+--success: var(--dark-green);
+--info:  var(--turquoise);
+--warning: var(--warning-color);
+--danger: var(--deep-orange);
+
+}
+
+/**
+ * @tokens CSS: Spacings
+ * @presenter Spacing
+ */
+:root {
+--spacer: 1rem;
+--space-xxs: .125rem;
+--space-xs:  0.25rem;
+--space-sm: 0.5rem;
+--space-md: var(--spacer);
+--space-lg: 2rem;
+--space-xl: 4rem;
+--space-xxl: 8rem;
+}
+
+/**
+  * @tokens CSS: Easings
+  * @presenter Easing
+  */
+:root {
+--transition-basic: all .2s linear; /* To use it in SCSS you can add $transition-basic variable */
+}
+
+/**
+  * @tokens CSS: Border
+  * @presenter Border
+  */
+:root {
+--border-radius-circle: 50%;
+}

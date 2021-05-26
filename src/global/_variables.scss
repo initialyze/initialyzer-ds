@@ -1,23 +1,12 @@
 // overwrite the default bootstrap variables which we will need here for some calculation
 @import "overwrite";
+@import "design-token-variables";
 
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-/* Opacity palette */
-$opacity-0: 0;
-$opacity-10: 0.1;
-$opacity-20: 0.2;
-$opacity-30: 0.3;
-$opacity-40: 0.4;
-$opacity-50: 0.5;
-$opacity-60: 0.6;
-$opacity-70: 0.7;
-$opacity-80: 0.8;
-$opacity-90: 0.9;
-$opacity-100: 1;
 
 /* Opacity classes with respective values */
 $opacity-classes: (
@@ -65,60 +54,7 @@ $open-font-path: "../resources/fonts/OpenSans/" !default;
 // Font-Awesome
 $fa-font-path:        "../resources/font-awesome";
 
-// Colors
-$warning-color:    #FFB900 !default;
-$crimson:          #E74856 !default;
-$blue:             #0078D7 !default;
-$cyan:             #0099BC !default;
-$dimgrey:          #7A7574 !default;
-$grey:             #767676 !default;
-$light-grey:       #BFBFBF !default;
-$gainsboro:        #DCDCDC !default;
-$amber:            #FF8C00 !default;
-$red:              #E81123 !default;
-$dark-blue:        #0063B1 !default;
-$steel-blue:       #2D7D9A !default;
-$dark-dimgrey:     #5D5A58 !default;
-$dark-grey:        #4C4A48 !default;
-$orange:           #F7630C !default;
-$pink:             #EA005E !default;
-$light-violet:     #8E8CD8 !default;
-$turquoise:        #00B7C3 !default;
-$bluegrey:         #68768A !default;
-$steel:            #69797E !default;
-$chocolate:        #CA5010 !default;
-$medium-violet:    #C30052 !default;
-$slate-blue:       #6B69D6 !default;
-$teal:             #038387 !default;
-$dark-bluegrey:    #515C6B !default;
-$dark-steel:       #4A5459 !default;
-$deep-orange:      #DA3B01 !default;
-$megent:           #E3008C !default;
-$light-purple:     #8764B8 !default;
-$light-sea:        #00B294 !default;
-$slate-grey:       #567C73 !default;
-$olive:            #647C64 !default;
-$salmon:           #EF6950 !default;
-$dark-pink:        #BF0077 !default;
-$dark-purple:      #744DA9 !default;
-$dark-cyan:        #018574 !default;
-$green-grey:       #486860 !default;
-$dark-olive:       #525E54 !default;
-$dark-coral:       #D13438 !default;
-$orchid:           #C239B3 !default;
-$medium-orchid:    #B146C2 !default;
-$green:            #00CC6A !default;
-$grass-green:      #498205 !default;
-$sandy:            #847545 !default;
-$coral:            #FF4343 !default;
-$purple:           #9A0089 !default;
-$dark-orchid:      #881798 !default;
-$forest-green:     #10893E !default;
-$dark-green:       #107C10 !default;
-$earth:            #7E735F !default;
-$black-base:       #000    !default;
-$white-base:       #fff    !default;
-
+// Color pallate
 $full-pallete: () !default;
 $full-palette: map-merge(
                 (
@@ -232,18 +168,6 @@ $typography-sizes: map_merge(
 );
 
 
-//Spacing Defaults
-$body-default-padding: 1rem 0;
-
-//space in rems
-$space-xxs: $spacer * .125;
-$space-xs: $spacer * 0.25;
-$space-sm: $spacer * 0.5;
-$space-md: $spacer;
-$space-lg: $spacer * 2;
-$space-xl: $spacer * 4;
-$space-xxl: $spacer * 8;
-
 $space_tokens: (
         xxs  :   $space-xxs,
         xs   :   $space-xs,
@@ -253,12 +177,6 @@ $space_tokens: (
         xl   :   $space-xl,
         xxl   :   $space-xxl
 );
-
-// Transitions
-$transition-basic: all .2s linear !default;
-
-// Border radius
-$border-radius-circle: 50% !default;
 
 // Dropdown
 $dropdown-menu-padding: 1rem !default;
